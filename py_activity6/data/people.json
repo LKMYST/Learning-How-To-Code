@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Erzam",
+    "knows": [
+      "Joe",
+      "Hakim"
+    ]
+  },
+  {
+    "name": "Joe",
+    "knows": [
+      "Summer",
+      "Erzam"
+    ]
+  },
+  {
+    "name": "Summer",
+    "knows": [
+      "Joe",
+      "Hakim",
+      "Erzam"
+    ]
+  }
+]
