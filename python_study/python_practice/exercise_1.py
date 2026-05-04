@@ -6,5 +6,3 @@ import re
 
 number_list = re.findall(r"\d", input("Number: "))
 target_sum = int(input("Target: "))
-
-    
