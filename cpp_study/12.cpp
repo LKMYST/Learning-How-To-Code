@@ -7,41 +7,48 @@ struct Student {
     int score;
 };
 
-void append_student(std::vector<Student>& list);
-void remove_student(std::vector<Student>& list);
-void print_list(const auto& list);
+void add_student(std::vector<Student>& students);
+void print_list(const std::vector<Student>& students);
 
 int main() {
-    std::vector<Student> student_list;
-    
+    std::vector<Student> students;
+
     while (true) {
-        std::cout << "1.append 2.remove 3.print list 0.exit" << std::endl;
+        std::cout << "1.add 2.list 0.exit" << std::endl;
         std::cout << "Please enter: ";
         
         int command;
         std::cin >> command;
-        
-        switch (command)
-        {
-        case 1: 
-            append_student(student_list);
-            break;
-        case 2:
-            remove_student(student_list);
-            break;
-        case 3:
-            print_list(student_list);
-            break;
-        case 0:
-            return 0;
-        default:
-            break;
+
+        if (command == 1) {
+            add_student(students);
+        } else if (command == 2) {
+            print_list(students);
+        } else if (command == 0) {
+            break; 
+        } else {
+            continue;
         }
     }
-
-    return 0;
 }
 
-void append_student(auto& list) {
-    
+void add_student(std::vector<Student>& students) {
+    Student new_student;
+
+    std::cout << "Please enter student name: ";
+    std::cin >> new_student.name;
+
+    std::cout << "Please enter student score: ";
+    std::cin >> new_student.score;
+
+    students.push_back(new_student);
 }
+
+void print_list(const std::vector<Student>& students) {
+    std::cout << "--- Student List ---" << std::endl;
+
+    for (const auto& s : students) {
+        std::cout << s.name << "\t" << s.score << std::endl;
+    }
+}
+
